@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Street</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Street</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav>
+      <%= link_to 'buildings', buildings_path %>
+      <%= link_to 'units', units_path %>
+      <%= link_to 'residents', residents_path %>
+      <%= link_to 'occupancies', occupancies_path %>
+    </nav>
 
-<%= yield %>
+  <%= yield %>
 
-</body>
+  </body>
 </html>
