@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Occupancies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Unit</th>
+      <th>Resident</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @occupancies.each do |occupancy| %>
+      <tr>
+        <td><%= occupancy.unit %></td>
+        <td><%= occupancy.resident %></td>
+        <td><%= link_to 'Show', occupancy %></td>
+        <td><%= link_to 'Edit', edit_occupancy_path(occupancy) %></td>
+        <td><%= link_to 'Destroy', occupancy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Occupancy', new_occupancy_path %>

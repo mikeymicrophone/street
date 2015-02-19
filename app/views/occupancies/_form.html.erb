@@ -1,0 +1,25 @@
+<%= form_for(@occupancy) do |f| %>
+  <% if @occupancy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@occupancy.errors.count, "error") %> prohibited this occupancy from being saved:</h2>
+
+      <ul>
+      <% @occupancy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :unit_id %><br>
+    <%= f.select :unit_id, options_from_collection_for_select(Unit.all, :id, :name, @occupancy.unit_id), :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :resident_id %><br>
+    <%= f.select :resident_id, options_from_collection_for_select(Resident.all, :id, :name, @occupancy.resident_id), :include_blank => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

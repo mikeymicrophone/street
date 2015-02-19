@@ -15,3 +15,8 @@ Fabricator(:resident) do
   last_name  { Faker::Name.last_name }
   birthdate  { Date.today - (100..36500).to_a.sample.days }
 end
+
+Fabricator(:occupancy) do
+  unit(fabricator: :unit)
+  resident(fabricator: :resident)
+end

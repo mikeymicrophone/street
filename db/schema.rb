@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219013156) do
+ActiveRecord::Schema.define(version: 20150219015332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20150219013156) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "occupancies", force: :cascade do |t|
+    t.integer  "unit_id"
+    t.integer  "resident_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "occupancies", ["resident_id"], name: "index_occupancies_on_resident_id", using: :btree
+  add_index "occupancies", ["unit_id"], name: "index_occupancies_on_unit_id", using: :btree
 
   create_table "residents", force: :cascade do |t|
     t.string   "first_name"
@@ -42,5 +52,7 @@ ActiveRecord::Schema.define(version: 20150219013156) do
 
   add_index "units", ["building_id"], name: "index_units_on_building_id", using: :btree
 
+  add_foreign_key "occupancies", "residents"
+  add_foreign_key "occupancies", "units"
   add_foreign_key "units", "buildings"
 end
