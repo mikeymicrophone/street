@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :building_id %><br>
-    <%= f.text_field :building_id %>
+    <%= f.select :building_id, options_from_collection_for_select(Building.all, :id, :name, @unit.building_id), :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :bedrooms %><br>

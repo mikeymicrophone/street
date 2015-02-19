@@ -10,7 +10,7 @@ RSpec.describe "units/edit", type: :view do
 
     assert_select "form[action=?][method=?]", unit_path(@unit), "post" do
 
-      assert_select "input#unit_building_id[name=?]", "unit[building_id]"
+      assert_select "select#unit_building_id[name=?]", "unit[building_id]"
 
       assert_select "input#unit_bedrooms[name=?]", "unit[bedrooms]"
 
