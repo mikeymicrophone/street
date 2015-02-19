@@ -1,0 +1,7 @@
+This application is a coding test designed to gently stimulate the mind!
+
+The premise is that a bunch of buildings are all on the same street.
+
+We keep track of the tenants who live in each building.
+
+If there are any vacancies, the tenants can move to other buildings.
