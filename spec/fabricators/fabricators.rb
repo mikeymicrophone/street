@@ -9,3 +9,9 @@ Fabricator(:unit) do
   name { |attrs| "#{attrs[:floor]}#{(?A..?Z).to_a.sample}" }
   bedrooms { (1..10).to_a.sample }
 end
+
+Fabricator(:resident) do
+  first_name { Faker::Name.first_name }
+  last_name  { Faker::Name.last_name }
+  birthdate  { Date.today - (100..36500).to_a.sample.days }
+end

@@ -110,7 +110,8 @@ RSpec.describe BuildingsController, type: :controller do
         building = Building.create! valid_attributes
         put :update, {:id => building.to_param, :building => new_attributes}, valid_session
         building.reload
-        skip("Add assertions for updated state")
+        expect(Building.first.name).to eq('Jefferson Courtyard')
+        expect(Building.first.stories).to eq(82)
       end
 
       it "assigns the requested building as @building" do

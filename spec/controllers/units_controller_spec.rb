@@ -103,14 +103,14 @@ RSpec.describe UnitsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {bedrooms: 5}
       }
 
       it "updates the requested unit" do
         unit = Unit.create! valid_attributes
         put :update, {:id => unit.to_param, :unit => new_attributes}, valid_session
         unit.reload
-        skip("Add assertions for updated state")
+        expect(Unit.first.bedrooms).to eq(5)
       end
 
       it "assigns the requested unit as @unit" do
