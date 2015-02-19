@@ -14,8 +14,8 @@
   <tbody>
     <% @occupancies.each do |occupancy| %>
       <tr>
-        <td><%= occupancy.unit %></td>
-        <td><%= occupancy.resident %></td>
+        <td><%= occupancy.unit.name %></td>
+        <td><%= occupancy.resident.name %></td>
         <td><%= link_to 'Show', occupancy %></td>
         <td><%= link_to 'Edit', edit_occupancy_path(occupancy) %></td>
         <td><%= link_to 'Destroy', occupancy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
