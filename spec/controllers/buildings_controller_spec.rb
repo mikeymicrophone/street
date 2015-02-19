@@ -103,7 +103,7 @@ RSpec.describe BuildingsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {name: 'Jefferson Courtyard', stories: 82}
       }
 
       it "updates the requested building" do
