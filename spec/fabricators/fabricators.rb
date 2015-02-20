@@ -22,5 +22,5 @@ Fabricator(:occupancy) do
 end
 
 # Fabricator(:building_with_units, from: :building) do
-#   units { |attrs| attrs[:stories].times { |story| (3..15).to_a.sample.times { Fabricate.build(:unit, {floor: story + 1}) } } }
+#   units { |attrs| attrs[:stories].times { |story| (3..15).to_a.sample.times { Fabricate(:unit, {floor: story + 1}) } } }
 # end
